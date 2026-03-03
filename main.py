@@ -1,16 +1,55 @@
-# This is a sample Python script.
+def add (a, b):
+    return a + b
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def sub (a, b):
+    return a - b
+
+def mul (a, b):
+    return a * b
+
+def div (a, b):
+    return a / b
+
+def calculator ():
+    print("=== Simple Calculator ===")
+    print("Operations: + | - | * | /")
+    print("Type 'quit' to exit\n")
+    #CREATE A WHILE LOOP INSIDE THE CALCULATOR APP
+    while True:
+        try:
+            num1 = input("Enter a number")
+            if num1.lower() == "quit":
+                break
+
+            operator = input("Enter an operator, +, -, /, or *")
+            if operator not in ("+", "-", "*", "/"):
+                print("Invalid operator. Please use +, -, *, or /", "\n")
+                continue
+
+            num2 = input("Enter another number")
+            if num2.lower() == "quit":
+                break
+
+            a = float(num1)
+            b = float(num2)
+        except ValueError:
+            print("Invalid Input. Please enter a numeric value. \n")
+
+        if operator == "+":
+            result = add(a, b)
+        elif operator == "-":
+            result = sub(a, b)
+        elif operator == "*":
+            result = mul(a, b)
+        elif operator == "/":
+            result = div(a, b)
+
+#this print statement is called anF STRING
+        print(f"\nResult: {a} {operator} {b} = {result}\n")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+calculator()
+
+#REMIND BRIGHT TO TEACH ME THE TRY LOOP
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
